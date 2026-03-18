@@ -1,0 +1,30 @@
+CREATE DATABASE clinicdb;
+USE clinicdb;
+
+CREATE TABLE appointments (
+    appointment_id INT AUTO_INCREMENT PRIMARY KEY,
+    patient_name VARCHAR(100) NOT NULL,
+    doctor_name VARCHAR(100) NOT NULL,
+    appointment_date DATE NOT NULL,
+    appointment_time TIME NOT NULL
+);
+
+
+INSERT INTO appointments (patient_name, doctor_name, appointment_date, appointment_time)
+VALUES 
+('Aarthii', 'Dr. Ravi', '2026-03-20', '10:30:00'),
+('John', 'Dr. Meena', '2026-03-21', '11:00:00');
+
+
+SELECT * FROM appointments;
+
+
+UPDATE appointments
+SET patient_name = 'Aarthii R',
+    doctor_name = 'Dr. Kumar',
+    appointment_date = '2026-03-22',
+    appointment_time = '12:00:00'
+WHERE appointment_id = 1;
+
+DELETE FROM appointments
+WHERE appointment_id = 2;
